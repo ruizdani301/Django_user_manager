@@ -20,10 +20,10 @@ sample view
 ![presentation](static/img/image.png)
 ![list_employee](static/img/lista_empleado.png)
 
-\*\* to run the project, at the level of manager.py
+- to run the project, at the level of manager.py
 
-- Python3 manage.py runserver
+* Python3 manage.py runserver
 
 Athor:
 Daniel ruiz
-[Linkedin](www.linkedin.com/in/daniel-ruiz)
+[Linkedin](https://www.linkedin.com/in/daniel-ruiz)
