@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Lista de departamentos
+{% endblock title%}
+
+{% block body %}
+{% include "includes/header.html" %}
+<div class="grid-container">
+  <div class="grid-x">
+    <h1 class="cell small-12 large-12">Lista de departamentos</h1>
+    <div class="cell">
+      <table class="stack">
+        <tbody>
+          {% for e in object_list %}
+          <tr>
+            <td>{{ e.name }}</td>
+            <td>{{ e.short_name }}</td>
+            <td>
+              <a class="button warning" href="{% url 'employee_app:by_department' e.short_name %}">ver empleados</a>
+            </td>
+          </tr>
+          {% endfor %}
+
+        </tbody>
+      </table>
+    </div>
+    <div class="cell">
+      {% if is_paginated %}
+      <nav aria-label="Pagination">
+        <ul class="pagination text-center">
+          {% if page_obj.has_previous %}
+          <li class="pagination-previous">
+            <a href="?page={{page_obj.previous_page_number}}">Atras</a>
+          </li>
+          {% endif%}
+          {% for pagina in page_obj.paginator.page_range %}
+
+          <li><a href="?page={{ pagina }}">{{ pagina }}</a></li>
+
+          {% endfor %}
+          {% if page_obj.has_next %}
+          <li class="pagination-next">
+            <a href="?page={{page_obj.next_page_number}}">Siguiente</a>
+          </li>
+          {% endif%}
+        </ul>
+      </nav>
+      {% endif %}
+
+    </div>
+  </div>
+</div>
+{% endblock body %}

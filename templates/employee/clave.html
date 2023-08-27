@@ -1,0 +1,14 @@
+<h1>Buscar empleado por nombre</h1>
+
+<form method="GET">
+  {% csrf_token %}
+  <input type="text" id="nombre" name="nombre" placeholder="Ingresa nombre" />
+  <button type="submit">Enviar</button>
+</form>
+
+<h2>Lista de empleados</h2>
+<ul>
+  {% for e in object_list %}
+  <li>{{e}}</li>
+  {% endfor%}
+</ul>

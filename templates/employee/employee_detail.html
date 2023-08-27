@@ -1,0 +1,35 @@
+{% extends 'base.html' %} {% load static %} {% block title %} {{object.full_name}}
+{% endblock title %} {% block body %} {% include 'includes/header.html' %}
+
+<div class="grid-container">
+  <div class="grid-x grid-margin-x align-center">
+
+    <div class="card cell large-4 small-12 medium-4" style="width: 300px; margin-top: 15px;">
+      <div class="" style="text-align: center; background-color: rgba(243, 243, 243, 0.705); margin: 10px;">
+        {{object.get_job_display}}
+      </div>
+      {% if object.avatar %}
+      <img src="{{ object.avatar.url }}">
+      {% else %}
+      <img src="{% static 'img/no-disponible.jpg' %}">
+      {% endif %}
+
+      <div class="card-section" style="text-align: center;">
+        <h4>{{object.full_name}}</h4>
+        <p>{{object.first_name}}</p>
+        <p>{{object.last_name}}</p>
+        <p>{{object.department.short_name}}</p>
+        <p class="label">Habilidades</p>
+        <ul>
+          {% for skill in object.skills.all %}
+          <li>{{skill.skill}}</li>
+          {% endfor %}
+
+        </ul>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+{% endblock body %}

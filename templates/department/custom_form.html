@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block title%}
+form personalizado
+{% endblock title%}
+{% block body %}
+{% include 'includes/header.html' %}
+<div class="grid-container">
+  <div class="grid-x">
+
+    <h1 class="cell">
+      <h3>Nuevo departamento</h3>
+    </h1>
+    <form class="cell callout grid-x grid-margin-x" method="POST">{% csrf_token %}
+      <div class="cell large-12 medium-12 small-12">
+        <h3>Datos empleado</h3>
+      </div>
+      <div class="cell large-6 medium-6 small-12">
+        <label>Nombre
+          {{form.name}}
+        </label>
+      </div>
+      <div class="cell large-6 medium-6 small-12">
+        <label>Apellido
+          {{form.last_name}}
+        </label>
+      </div>
+      <div class="cell large-12 medium-12 small-12">
+        <h3>Datos departamento</h3>
+      </div>
+      <div class="cell large-6 medium-6 small-12">
+        <label>Departamento
+          {{form.department}}
+        </label>
+      </div>
+      <div class="cell large-6 medium-6 small-12">
+        <label>area
+          {{form.short_name}}
+        </label>
+      </div>
+      <div class="cell large-12 medium-12 small-12">
+        <button type="submit" class="submit success button">Registrar</button>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock body %}
