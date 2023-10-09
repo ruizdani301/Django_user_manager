@@ -18,7 +18,7 @@ DATABASES = {
 
 STATIC_URL = "static/"
 STATICFILES_DIRS = [BASE_DIR / 'static']
-STATIC_ROOT = '/home/usuario/employee/static'
+STATIC_ROOT = '/home/usermanager/Django_user_manager/static'
 
 # Configuracion para cargar archivos multimedia
 MEDIA_URL = '/media/'
