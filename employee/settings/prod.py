@@ -16,19 +16,21 @@ BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 
 # SECURITY WARNING: keep the secret key used in production secret!
-with open("secret.json") as f:
-    secret = json.loads(f.read())
+# with open("secret.json") as f:
+#     secret = json.loads(f.read())
 
 
-def get_secret(secret_name, secrets=secret):
-    try:
-        return secret[secret_name]
-    except:
-        msg = "la variable %s no existe" % secret_name
-        raise ImproperlyConfigured(msg)
+# def get_secret(secret_name, secrets=secret):
+#     try:
+#         return secret[secret_name]
+#     except:
+#         msg = "la variable %s no existe" % secret_name
+#         raise ImproperlyConfigured(msg)
+
+#SECRET_KEY = get_secret("SECRET_KEY")
 
 
-SECRET_KEY = get_secret("SECRET_KEY")
+SECRET_KEY = "django-insecure-^4m1&q@6vze1+&f80tw35(hwhc&&@$!27yxms$q&^z7f+q#w8c"
 
 
 INSTALLED_APPS = [
