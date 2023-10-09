@@ -1,7 +1,7 @@
 from .base import *
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -18,6 +18,7 @@ DATABASES = {
 
 STATIC_URL = "static/"
 STATICFILES_DIRS = [BASE_DIR / 'static']
+STATIC_ROOT = '/home/usuario/employee/static'
 
 # Configuracion para cargar archivos multimedia
 MEDIA_URL = '/media/'
