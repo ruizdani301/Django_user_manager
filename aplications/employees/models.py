@@ -28,7 +28,7 @@ class Employee(models.Model):
     job = models.CharField('ocupaciòn', max_length=1, choices=JOB_CHOICES)
     department = models.ForeignKey(Department, on_delete=models.CASCADE)
     avatar = models.ImageField(upload_to='empleado', blank=True, null=True)
-    # Creacion de relacion muchos a muchos
+    #Creacion de relacion muchos a muchos
     skills = models.ManyToManyField(Skill)
 
     class Meta:
